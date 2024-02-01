@@ -28,6 +28,13 @@ def jugar(palabra):
         print(f"Palabra: {palabra_secreta}")
         letra = input("Introduce una letra: ")
 
+         abecedario = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+        if letra in abecedario:
+            print("Tu letra esta dentro.")
+
+        else:
+            print("No se permiten numeros.")
+        
         if letra not in palabra:
             intentos += 1
             print(f"Letra incorrecta. Te quedan {intentos_maximos - intentos} intentos.")
