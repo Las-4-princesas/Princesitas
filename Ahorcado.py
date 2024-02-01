@@ -1,12 +1,13 @@
-import random
-class juego_ahorcado:
-    def __init__(self):
-        pass
+import os   #El os es una libreria que nos sirve para interactuar con el sistema operativo
 
-def optener_palabra():
-    palabras = ["programacion", "computadora", "mouse", "comando", "codigo", "python"]
-    palabras_aleatoria = random.choice(palabras)
-    return palabra_aleatoria
+def limpiar_pantalla():
+    os.system('cls' if os.name == 'nt' else 'clear')   #El cls es para limpiar y el nt es la extención que se va a utilizar
+
+def ingresa_palabra():
+    limpiar_pantalla()
+    palabra = input("Introduce la palabra a adivinar: ").lower()
+    limpiar_pantalla()
+    return palabra
 
 def mostrar_palabra_secreta(palabra, letras_adivinadas):
     palabra_secreta = ""
