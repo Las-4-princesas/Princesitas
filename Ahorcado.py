@@ -5,7 +5,7 @@ def limpiar_pantalla():
 
 def ingresa_palabra():
     limpiar_pantalla()
-    palabra = input("Introduce la palabra a adivinar: ")
+    palabra = input("Introduce la palabra a adivinar: ").lower()
     limpiar_pantalla()
     return palabra
 
@@ -26,7 +26,7 @@ def jugar(palabra):
     while intentos < intentos_maximos:
         palabra_secreta = mostrar_palabra_secreta(palabra, letras_adivinadas)
         print(f"Palabra: {palabra_secreta}")
-        letra = input("Introduce una letra: ")
+        letra = input("Introduce una letra: ").lower()
 
         if letra not in palabra:
             intentos += 1
