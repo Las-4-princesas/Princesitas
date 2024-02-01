@@ -18,14 +18,76 @@ def mostrar_palabra_secreta(palabra, letras_adivinadas):
             palabra_secreta += "_"
     return palabra_secreta
 
+def ahorcado(intentos):
+    dibujos_ahorcado = [
+        """
+                       ___
+                      |   |
+                          |
+                          |
+                          |
+                    ______|
+        """,
+        """
+                       ___
+                      |   |
+                      O   |
+                          |
+                          |
+                    ______|
+        """,
+        """
+                       ___
+                      |   |
+                     _O   |
+                          |
+                          |
+                    ______|
+        """,
+        """
+                       ___
+                      |   |
+                     _O/  |
+                          |
+                          |
+                    ______|
+        """,
+        """
+                       ___
+                      |   |
+                     _O/  |
+                      |   |
+                          |
+                    ______|
+        """,
+        """
+                       ___
+                      |   |
+                     _O/  |
+                      |   |
+                       \  |
+                    ______|
+        """,
+        """
+                       ___
+                      |   |
+                     _O/  |
+                      |   |
+                     / \  |
+                    ______|
+        """
+    ]
+    print(dibujos_ahorcado[intentos])
+
 def jugar(palabra):
     letras_adivinadas = set()
-    intentos_maximos = 5
+    intentos_maximos = 7
     intentos = 0
 
     while intentos < intentos_maximos:
         palabra_secreta = mostrar_palabra_secreta(palabra, letras_adivinadas)
         print(f"Palabra: {palabra_secreta}")
+        ahorcado(intentos)
         letra = input("Introduce una letra: ")
 
          abecedario = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
