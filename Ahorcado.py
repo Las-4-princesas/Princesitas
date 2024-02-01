@@ -5,7 +5,7 @@ def limpiar_pantalla():
 
 def ingresa_palabra():
     limpiar_pantalla()
-    palabra = input("Introduce la palabra a adivinar: ")
+    palabra = input("Introduce la palabra a adivinar: ").lower()
     limpiar_pantalla()
     return palabra
 
@@ -88,7 +88,7 @@ def jugar(palabra):
         palabra_secreta = mostrar_palabra_secreta(palabra, letras_adivinadas)
         print(f"Palabra: {palabra_secreta}")
         ahorcado(intentos)
-        letra = input("Introduce una letra: ")
+        letra = input("Introduce una letra: ").lower()
 
          abecedario = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
         if letra in abecedario:
@@ -102,7 +102,12 @@ def jugar(palabra):
             print(f"Letra incorrecta. Te quedan {intentos_maximos - intentos} intentos.")
         else:
             print("Adivinaste una letra.")
-
+            
+        if letra in letras_adivinadas:
+            print("ya has intentado con esta letra ocupa otro")
+            continue
+        letras_adivinadas.add(letra)
+        
         if set(palabra) == letras_adivinadas:
             print("Has adivinado la palabra.")
             break
